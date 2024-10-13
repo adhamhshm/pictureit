@@ -1,0 +1,15 @@
+- to create next app in current folder
+npx create-next-app@latest ./
+
+- to install shadcn
+npx shadcn@latest init
+
+- to add shadcn ui
+npx shadcn@latest add button
+
+- to run the next app
+npm run dev
+
+- using clerk
+npm install @clerk/nextjs
+follow documentations

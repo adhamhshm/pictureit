@@ -12,13 +12,7 @@ type CustomFieldProps = {
     className?: string;
 };
 
-export const CustomField = ({
-    control,
-    render,
-    name,
-    formLabel,
-    className,
-}: CustomFieldProps) => {
+export const CustomField = ({ control, render, name, formLabel, className }: CustomFieldProps) => {
     return (
         <FormField
             control={control}

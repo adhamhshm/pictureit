@@ -21,7 +21,7 @@ const Sidebar = () => {
                 <nav className="sidebar-nav">
                     <SignedIn>
                         <ul className="sidebar-nav_elements">
-                            {navLinks.slice(0,6).map((link) => {
+                            {navLinks.slice(0,4).map((link) => {
                                 const isLinkActive = link.route === pathname
                                 return (
                                     <li key={link.route} className={`sidebar-nav_element group ${isLinkActive ? "bg-purple-gradient text-white" : "text-gray-700"}`}>
@@ -40,7 +40,7 @@ const Sidebar = () => {
                             })}
                         </ul>
                         <ul className="sidebar-nav_elements">
-                            {navLinks.slice(6).map((link) => {
+                            {navLinks.slice(4).map((link) => {
                                 const isLinkActive = link.route === pathname
                                 return (
                                     <li key={link.route} className={`sidebar-nav_element group ${isLinkActive ? "bg-purple-gradient text-white" : "text-gray-700"}`}>

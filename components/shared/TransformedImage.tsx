@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-
 "use client"
 
 import { dataUrl, debounce, download, getImageSize } from "@/lib/utils";
@@ -14,10 +13,10 @@ const TransformedImage = ({ image, type, title, transformationConfig, isTransfor
         e.preventDefault();
     
         download(getCldImageUrl({
-          width: image?.width,
-          height: image?.height,
-          src: image?.publicId,
-          ...transformationConfig
+            width: image?.width,
+            height: image?.height,
+            src: image?.publicId,
+            ...transformationConfig
         }), title)
     }
     

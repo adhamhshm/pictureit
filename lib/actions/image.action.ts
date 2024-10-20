@@ -96,7 +96,7 @@ export async function getImageById(imageId: string) {
 }
 
 // GET IMAGES
-export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: {
+export async function getAllImages({ limit = 9, page = 1, searchQuery = "" }: {
     limit?: number;
     page: number;
     searchQuery?: string;
@@ -111,17 +111,19 @@ export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: {
             secure: true,
         })
 
-        let expression = 'folder=imaginify';
+        let expression = "folder=pictureit";
 
         if (searchQuery) {
             expression += ` AND ${searchQuery}`
         }
 
         const { resources } = await cloudinary.search
-        .expression(expression)
-        .execute();
+            .expression(expression)
+            .execute();
 
-        const resourceIds = resources.map((resource: any) => resource.public_id);
+        const resourceIds = resources.map((resource: any) => 
+            resource.public_id
+        );
 
         let query = {};
 
@@ -136,9 +138,9 @@ export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: {
         const skipAmount = (Number(page) -1) * limit;
 
         const images = await populateUser(Image.find(query))
-        .sort({ updatedAt: -1 })
-        .skip(skipAmount)
-        .limit(limit);
+            .sort({ updatedAt: -1 })
+            .skip(skipAmount)
+            .limit(limit);
         
         const totalImages = await Image.find(query).countDocuments();
         const savedImages = await Image.find().countDocuments();
@@ -149,16 +151,12 @@ export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: {
             savedImages,
         }
     } catch (error) {
-        handleError(error)
+        handleError(error);
     }
 }
 
 // GET IMAGES BY USER
-export async function getUserImages({
-    limit = 9,
-    page = 1,
-    userId,
-}: {
+export async function getUserImages({ limit = 9, page = 1, userId }: {
     limit?: number;
     page: number;
     userId: string;
@@ -169,9 +167,9 @@ export async function getUserImages({
         const skipAmount = (Number(page) - 1) * limit;
 
         const images = await populateUser(Image.find({ author: userId }))
-        .sort({ updatedAt: -1 })
-        .skip(skipAmount)
-        .limit(limit);
+            .sort({ updatedAt: -1 })
+            .skip(skipAmount)
+            .limit(limit);
 
         const totalImages = await Image.find({ author: userId }).countDocuments();
 

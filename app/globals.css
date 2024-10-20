@@ -221,7 +221,7 @@
 
   /* Home Page */
   .home {
-    @apply sm:flex-center hidden h-48 flex-col gap-4 rounded-[20px] border bg-banner bg-cover bg-no-repeat p-10 shadow-inner;
+    @apply sm:flex-center hidden h-48 flex-col gap-4 rounded-[20px] border bg-purple-gradient bg-cover bg-no-repeat p-10 shadow-inner;
   }
 
   .home-heading {
@@ -329,7 +329,7 @@
   }
 
   .sidebar-nav_element {
-    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover  transition-all hover:bg-purple-100 hover:shadow-inner;
+    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-sky-100 hover:shadow-inner;
   }
 
   .sidebar-link {

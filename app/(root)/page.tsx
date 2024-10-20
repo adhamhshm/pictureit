@@ -1,10 +1,10 @@
 // This page.tsx will follow its (root)/layout.tsx structure
 
 import { Collection } from "../../components/shared/Collection";
-import { navLinks } from "@/constants"
+// import { navLinks } from "@/constants"
 import { getAllImages } from "../../lib/actions/image.action";
-import Image from "next/image"
-import Link from "next/link"
+// import Image from "next/image"
+// import Link from "next/link"
 
 const Home = async ({ searchParams }: SearchParamProps) => {
     const page = Number(searchParams?.page) || 1;

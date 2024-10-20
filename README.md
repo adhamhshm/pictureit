@@ -6,9 +6,11 @@ A follow through tutorial to develop an AI image editor to be a Software as a Se
 
 ## Features
 
+- View images as guest only without sign in
 - Sign up/sign in using Clerk Authentication
 - Utilize Cloudinary AI for image restoration, generative fill, and background removal
-- Store all edited images for users to view or edit later
+- Store all edited images for users to view, edit or delete later
+- Profile view to see all recent edited images
 - Purchase tokens via Stripe with a few plan options
 
 ## Getting Started
